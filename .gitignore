@@ -1,0 +1,15 @@
+node_modules
+#next js cache file
+.next/cache
+.git2
+.next
+.next/types/app/product-detail-2/page.ts
+.next/trace
+.next/static/webpack/webpack.ffd84ad9c24f32e2.hot-update.js
+.next/static/webpack/webpack.faab261339097f6f.hot-update.js
+.next/static/webpack/webpack.ffd84ad9c24f32e2.hot-update.js
+
+.next/fallback-build-manifest.json
+doonsilkmain.zip
+*.zip
+*.zip
