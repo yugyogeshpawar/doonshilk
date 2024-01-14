@@ -24,20 +24,20 @@ const FOUNDER_DEMO = [
     // "https://ucrf.org.in/wp-content/uploads/2022/06/Alok-Kumar-Pandey-150x150.jpg",
     "/ALKP.jpg",
   },
-  {
-    id: "6",
-    name: `Chaudhary Ajeet Singh`,
-    job: "Chairman",
-    avatar:
-    "/CAS.jpg"
-  },
-  {
-    id: "2",
-    name: `Vikram Singh Bisht`,
-    job: "vice chairman",
-    avatar:
-    "/vc.jpg"
-  },
+  // {
+  //   id: "6",
+  //   name: `Chaudhary Ajeet Singh`,
+  //   job: "Chairman",
+  //   avatar:
+  //   "/CAS.jpg"
+  // },
+  // {
+  //   id: "2",
+  //   name: `Vikram Singh Bisht`,
+  //   job: "vice chairman",
+  //   avatar:
+  //   "/vc.jpg"
+  // },
   // {
   //   id: "2",
   //   name: `Vikram Singh Bisht`,

@@ -30,7 +30,7 @@ const NavMobile: React.FC<NavMobileProps> = ({
 
   const router = useRouter();
   const handleclick = (id: string) => {
-    router.push(`/collection?id=${id}`, id)
+    router.push(`/collection?id=${id}`)
     setTimeout(onClickClose, 100);
   }
   const [menuCategory, setMenuCategory] = useState<MenuProps[]>([]);

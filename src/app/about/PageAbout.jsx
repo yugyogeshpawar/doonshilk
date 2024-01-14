@@ -1,7 +1,5 @@
 
 "use client";
-
-
 import rightImg from "@/images/hero-right1.png";
 import React from "react";
 import SectionFounder from "./SectionFounder";
@@ -9,16 +7,11 @@ import SectionStatistic from "./SectionStatistic";
 import BgGlassmorphism from "@/components/BgGlassmorphism/BgGlassmorphism";
 import BackgroundSection from "@/components/BackgroundSection/BackgroundSection";
 import SectionHero from "./SectionHero";
-import SectionClientSay from "@/components/SectionClientSay/SectionClientSay";
-import SectionPromo3 from "@/components/SectionPromo3";
 import HeaderTitle from './HeaderTitle';
-
-//import SectionVideo from "./SectionVideos"
+import VideosCrousel from "./VideosCrousel"
+// import SectionVideo from "./SectionVideos"
 import Crousal from "../Crousal/page";
-import { PageHome } from "../page";
 
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -27,74 +20,13 @@ import 'swiper/css/pagination';
 
 
 
-
-const VideosCrousel = () => {
-
-  const videos = ['https://www.youtube.com/embed/pcZivOPnsJU', 'https://youtu.be/OQ-VhlrZCjk?si=jlHaOfGJNh4k1YCe'];
-
-  const [play, setPlay] = React.useState(true);
-
-
-
-
-  return (
-
-    <div className="relative overflow-hidden">
-      <div className="rounded w-full  h-[240px] md:h-[420px] lg:h-[640px]">
-
-        <Swiper
-          className="w-full h-full"
-          spaceBetween={0}
-          slidesPerView={1}
-          modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
-          navigation
-          pagination={{ clickable: true }}
-          scrollbar={{ draggable: true }}
-          autoplay={{
-            delay: 2500,
-            disableOnInteraction: true,
-          }}
-        >
-          <SwiperSlide>
-            <iframe
-              className="w-full h-full absolute rounded object-cover"
-              src={'https://www.youtube.com/embed/pcZivOPnsJU'}
-              title="YouTube Video"
-              allowFullScreen
-            ></iframe>
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <iframe
-              className="w-full h-full rounded object-cover"
-              src={'https://www.youtube.com/embed/OQ-VhlrZCjk'}
-              title="YouTube Video"
-              allowFullScreen
-            ></iframe>
-          </SwiperSlide>
-
-
-          {/* {
-             videos.map((src, idx) => {
-             })
-           } */}
-        </Swiper>
-
-      </div>
-    </div>
-  );
-}
-
-
 const PageAbout = ({ }) => {
 
   return (
     <div className={`nc-PageAbout overflow-hidden relative`}>
-      {/* ======== BG GLASS ======== */}
 
       <BgGlassmorphism />
-      <Crousal
-      />
+      <Crousal />
 
       <div className="pt-2 ">
         <HeaderTitle />
@@ -104,16 +36,6 @@ const PageAbout = ({ }) => {
 
 
         <VideosCrousel />
-        {/* <div className="relative overflow-hidden">
-          <div className="aspect-w-16 aspect-h-9 rounded">
-            <iframe
-              className="w-full h-full absolute top-0 left-0 rounded"
-              src={'https://www.youtube.com/embed/pcZivOPnsJU'}
-              title="YouTube Video"
-              allowFullScreen
-            ></iframe>
-          </div>
-        </div> */}
         {/* <SectionVideo/> */}
         <SectionHero
           rightImg={rightImg}

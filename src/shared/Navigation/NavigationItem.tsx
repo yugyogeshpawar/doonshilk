@@ -35,7 +35,7 @@ const NavigationItem: FC<NavigationItemProps> = ({ menuItem }) => {
 
   const router = useRouter();
   const handleclick = (id: string) => {
-    router.push(`/collection?id=${id}`, id)
+    router.push(`/collection?id=${id}`)
   }
   const [menuCurrentHovers, setMenuCurrentHovers] = useState<string[]>([]);
   const [menuCategory, setMenuCategory] = useState<MenuProps[]>([]);
