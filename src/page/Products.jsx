@@ -15,6 +15,7 @@ function ProductForm() {
   const [description, setDescription] = useState('');
   const [category, setCategory] = useState(5); // SET category id from db 
   const [price, setPrice] = useState('');
+  const [position, setPosition] = useState(0);
   const [discounted, setDiscounted] = useState('');
   const [percent, setPercentage] = useState('');
   const [productColor, setProductColor] = useState('');
@@ -83,6 +84,7 @@ function ProductForm() {
       formData.append("image1", imageOne)
       formData.append("image2", imageTwo)
       formData.append("image3", imageThree)
+      formData.append("position", position)
       console.log(formData)
       toast.warn('Please Wait till we upload files. It may take some time depending on internet speed');
       axios.post(`${baseUrl}addProductWithVariants`, formData, {
@@ -129,6 +131,7 @@ function ProductForm() {
       formData.append('image1', vTwoImageOne);
       formData.append('image2', vTwoImageTwo);
       formData.append('image3', vTwoImageThee);
+      formData.append('position', position);
 
       console.log(formData)
       axios.post(`${baseUrl}addVariant`, formData, {
@@ -235,7 +238,13 @@ function ProductForm() {
               onChange={(e) => { setImageThree(e.target.files[0]) }} />
           </Col>
 
+          
+
         </Row>
+        <Col style={{ maxWidth: '200px'}}>
+            <Label>Position</Label>
+            <Input type="text" value={position} onChange={(e) => { setPosition(e.target.value) }} required />
+          </Col>
       </CardBody>
 
       <CardFooter>

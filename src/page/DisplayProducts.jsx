@@ -156,6 +156,16 @@ export default function DisplayProducts() {
     },
 
     {
+      name: 'position',
+      selector: Row => Row['position'],
+      ignoreRowClick: true,
+      allowOverflow: true,
+      button: true,
+      wrap: true
+    },
+
+
+    {
       name: 'Delete',
       cell: (row) => <Btn color="danger" onClick={() => { handleDelete(row) }} id={row.ID}><Trash size={14} color="white" /></Btn>,
       ignoreRowClick: true,

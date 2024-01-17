@@ -13,7 +13,7 @@ import { Image, Minimize, SkipBack, Trash } from "react-feather";
 
 
 
-function ProductForm({ autoData , onSuccess}) {
+function ProductForm({ autoData, onSuccess }) {
   const [productId, setProductId] = useState(autoData.product_id);
   const [name, setName] = useState(autoData.name);
   const [description, setDescription] = useState(autoData.description);
@@ -28,6 +28,7 @@ function ProductForm({ autoData , onSuccess}) {
   const [imageThree, setImageThree] = useState([]);
   const [data, setData] = useState([]);
   const [progress, setProgress] = useState(null);
+  const [position, setPosition] = useState(autoData.position);
 
   useEffect(() => {
     axios.get(`${baseUrl}get_all_categories`)
@@ -80,6 +81,7 @@ function ProductForm({ autoData , onSuccess}) {
       formData.append("image1", imageOne)
       formData.append("image2", imageTwo)
       formData.append("image3", imageThree)
+      formData.append("position", position)
       console.log(formData)
       toast.warn('Please Wait till we upload files. It may take some time depending on internet speed');
       axios.post(`${baseUrl}updateMainProduct`, formData, {
@@ -103,9 +105,9 @@ function ProductForm({ autoData , onSuccess}) {
           //if(response.status===201){
           //  toast.success('Product Added Successfully')
           setProductId(response.data.datas.product_id)
-          setTimeout(()=>{
+          setTimeout(() => {
             onSuccess && onSuccess();
-          },2500);
+          }, 2500);
           //  console.log(response.data.data.product_id)
 
           //}else{
@@ -169,8 +171,8 @@ function ProductForm({ autoData , onSuccess}) {
             </div>
           </Col>
           <Col>
-            <Label>Price <span style={{ color: 'red', fontSize: 14 }}>*</span></Label>
-            <Input type="text" value={price} onChange={(e) => { setPrice(e.target.value) }} required />
+            <Label>Position <span style={{ color: 'red', fontSize: 14 }}>*</span></Label>
+            <Input type="text" value={position} onChange={(e) => { setPosition(e.target.value) }} required />
           </Col>
           <Col>
             <Label>Discount % <span style={{ color: 'red', fontSize: 14 }}>*</span></Label>
@@ -241,6 +243,10 @@ function ProductForm({ autoData , onSuccess}) {
           </Col>
 
         </Row>
+        <Col>
+          <Label>Position <span style={{ color: 'red', fontSize: 14 }}>*</span></Label>
+          <Input type="text" value={position} onChange={(e) => { setPosition(e.target.value) }} required />
+        </Col>
       </CardBody>
 
       <CardFooter>
